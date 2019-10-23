@@ -9,19 +9,23 @@ import {
 
 const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => (
   <TopPlayersContainer>
-    {players.map((player, i) => (
-      <PlayerItem>
-        <CharacterImage src={getCharacterImage(player.character)} />
-        <PlayerContent>
-          <ContentItem>
-            <h2>{player.name}</h2> <h2>{player.score}</h2>
-          </ContentItem>
-          <ContentItem>
-            <span>{player.character}</span> <span>{i + 1}th place</span>
-          </ContentItem>
-        </PlayerContent>
-      </PlayerItem>
-    ))}
+    {players.map((player, i) => {
+      if (i > 3) return null;
+
+      return (
+        <PlayerItem>
+          <CharacterImage src={getCharacterImage(player.character)} />
+          <PlayerContent>
+            <ContentItem>
+              <h2>{player.name}</h2> <h2>{player.score}</h2>
+            </ContentItem>
+            <ContentItem>
+              <span>{player.character}</span> <span>{i + 1}th place</span>
+            </ContentItem>
+          </PlayerContent>
+        </PlayerItem>
+      );
+    })}
   </TopPlayersContainer>
 );
 

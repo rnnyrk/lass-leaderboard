@@ -2,6 +2,13 @@ export type OnClick<Element, ReturnType = void> = (event: React.MouseEvent<Eleme
 
 export type Player = {
   character: string;
+  id: string;
   name: string;
-  score: string;
+};
+
+export type Game = {
+  id: string;
+  player1: string;
+  player2: string;
+  outcome: string;
 };

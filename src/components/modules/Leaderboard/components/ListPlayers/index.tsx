@@ -9,21 +9,25 @@ import {
 
 const ListPlayers: React.FC<ListPlayersProps> = ({ players }) => (
   <ListPlayersContainer>
-    {players.map((player, i) => (
-      <ListItem>
-        <ListItemImg src={getCharacterImage(player.character)} />
-        <ListItemContent>
-          <ListPart>
-            <h4>{player.name}</h4>
-            <span>{player.character}</span>
-          </ListPart>
-          <ListPart>
-            <span>Score</span>
-            <h4>{player.score}</h4>
-          </ListPart>
-        </ListItemContent>
-      </ListItem>
-    ))}
+    {players.map((player, i) => {
+      if (i < 3) return null;
+
+      return (
+        <ListItem>
+          <ListItemImg src={getCharacterImage(player.character)} />
+          <ListItemContent>
+            <ListPart>
+              <h4>{player.name}</h4>
+              <span>{player.character}</span>
+            </ListPart>
+            <ListPart>
+              <span>Score</span>
+              <h4>{player.score}</h4>
+            </ListPart>
+          </ListItemContent>
+        </ListItem>
+      );
+    })}
   </ListPlayersContainer>
 );
 

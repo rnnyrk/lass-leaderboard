@@ -1,21 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import * as i from 'types';
 
-import data from './data.json';
+import { getPlayers, getGames } from 'services/firebase';
 
 import { LeaderHeader, ListPlayers, TopPlayers } from './components';
 import { LeaderboardContainer, LeaderGrid } from './styled';
 
-const topPlayers: i.Player[] = [data.leaderboard[0], data.leaderboard[1], data.leaderboard[2], data.leaderboard[3]];
-const listPlayers: i.Player[] = [data.leaderboard[4], data.leaderboard[5], data.leaderboard[6], data.leaderboard[7], data.leaderboard[8], data.leaderboard[9]];
+console.log('getPlayers', getPlayers);
 
 const Leaderboard: React.FC = () => {
+  const [players, setPlayers] = useState<i.Player[]>([]);
+  const [games, setGames] = useState<i.Game[]>([]);
+
+  useEffect(() => {
+    getPlayers.then((p) => setPlayers(p));
+    getGames.then((g) => setGames(g));
+  }, []);
+
   return (
     <LeaderboardContainer>
       <LeaderHeader />
       <LeaderGrid>
-        <TopPlayers players={topPlayers} />
-        <ListPlayers players={listPlayers} />
+        <TopPlayers players={players} />
+        <ListPlayers players={players} />
       </LeaderGrid>
     </LeaderboardContainer>
   );
