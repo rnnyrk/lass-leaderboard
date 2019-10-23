@@ -48,6 +48,10 @@ const globalStyle = createGlobalStyle`
     font-size: 32px;
     font-family: ${theme.font.primary};
   }
+
+  h4 {
+    font-size: 32px;
+  }
 `;
 
 export default globalStyle;
