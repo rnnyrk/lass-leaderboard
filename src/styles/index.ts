@@ -30,7 +30,23 @@ const globalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    text-transform: uppercase;
     font-family: ${theme.font.heading};
+  }
+
+  h1 {
+    font-size: 60px;
+    text-shadow: 0 0 14px rgba(255, 255, 255, 0.5);
+  }
+
+  h2 {
+    font-size: 48px;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-family: ${theme.font.primary};
   }
 `;
 
