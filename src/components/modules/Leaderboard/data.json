@@ -19,6 +19,36 @@
       "name": "Yanya",
       "score": 16,
       "character": "Corrin"
+    },
+    {
+      "name": "Rix",
+      "score": 12,
+      "character": "Ness"
+    },
+    {
+      "name": "Light",
+      "score": 12,
+      "character": "Pokemon Trainer"
+    },
+    {
+      "name": "Nuji",
+      "score": 11,
+      "character": "Mewtwo"
+    },
+    {
+      "name": "Smoke",
+      "score": 10,
+      "character": "Palutena"
+    },
+    {
+      "name": "Jossa",
+      "score": 9,
+      "character": "Simon"
+    },
+    {
+      "name": "Sral",
+      "score": 8,
+      "character": "Ike"
     }
   ]
 }

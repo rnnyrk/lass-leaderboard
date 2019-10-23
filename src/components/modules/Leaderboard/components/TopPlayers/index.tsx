@@ -1,9 +1,6 @@
 import React from 'react';
 
-import donkeykong from 'images/chars/donkeykong.png';
-import samus from 'images/chars/samus.png';
-import jigglypuff from 'images/chars/jigglypuff.png';
-import corrin from 'images/chars/corrin.png';
+import getCharacterImage from 'services/getCharacterImage';
 
 import {
   TopPlayersContainer, PlayerContent, PlayerItem, CharacterImage, ContentItem,
@@ -13,8 +10,7 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => (
   <TopPlayersContainer>
     {players.map((player, i) => (
       <PlayerItem>
-        <CharacterImage src={donkeykong} />
-
+        <CharacterImage src={getCharacterImage(player.character)} />
         <PlayerContent>
           <ContentItem>
             <h2>{player.name}</h2> <h2>{player.score}</h2>
