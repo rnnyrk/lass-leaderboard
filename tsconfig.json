@@ -20,6 +20,7 @@
       "ducks/*": ["src/ducks/*"],
       "ducks": ["src/ducks/index"],
       "images/*": ["src/static/images/*"],
+      "fonts/*": ["src/static/fonts/*"],
       "server": ["server/index"],
       "services/*": ["src/services/*"],
       "store": ["src/store"],

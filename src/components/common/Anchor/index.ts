@@ -6,7 +6,7 @@ const Anchor = styled.a.attrs(() => ({
 }))`
   color: ${(props) => props.theme.colors.black};
   text-decoration: none;
-  border-bottom: 2px solid ${(props) => props.theme.colors.prime};
+  border-bottom: 2px solid ${(props) => props.theme.colors.blue};
 `;
 
 export default Anchor;
