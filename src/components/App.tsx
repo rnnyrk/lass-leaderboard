@@ -11,8 +11,6 @@ const App: React.FC<RouteComponentProps> = () => (
     <Suspense fallback={<span>loading</span>}>
       <Switch>
         <Route path="/" component={Intro} exact />
-      </Switch>
-      <Switch>
         <Route path="/leaderboard" component={Leaderboard} exact />
       </Switch>
     </Suspense>

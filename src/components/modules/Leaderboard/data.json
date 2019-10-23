@@ -1,0 +1,24 @@
+{
+  "leaderboard": [
+    {
+      "name": "Nosso",
+      "score": 22,
+      "character": "Donkey Kong"
+    },
+    {
+      "name": "Fish",
+      "score": 19,
+      "character": "Samus"
+    },
+    {
+      "name": "Jap",
+      "score": 17,
+      "character": "Jigglypuff"
+    },
+    {
+      "name": "Yanya",
+      "score": 16,
+      "character": "Corrin"
+    }
+  ]
+}
