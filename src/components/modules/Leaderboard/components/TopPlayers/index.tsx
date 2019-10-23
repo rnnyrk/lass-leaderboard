@@ -1,4 +1,5 @@
 import React from 'react';
+import * as i from 'types';
 
 import getCharacterImage from 'services/getCharacterImage';
 
@@ -25,11 +26,7 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => (
 );
 
 type TopPlayersProps = {
-  players: [{
-    character: string;
-    name: string;
-    score: string;
-  }];
+  players: i.Player[];
 }
 
 export default TopPlayers;

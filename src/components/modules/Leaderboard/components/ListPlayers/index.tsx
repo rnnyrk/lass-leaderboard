@@ -1,4 +1,5 @@
 import React from 'react';
+import * as i from 'types';
 
 import getCharacterImage from 'services/getCharacterImage';
 
@@ -27,11 +28,7 @@ const ListPlayers: React.FC<ListPlayersProps> = ({ players }) => (
 );
 
 type ListPlayersProps = {
-  players: [{
-    character: string;
-    name: string;
-    score: string;
-  }];
+  players: i.Player[];
 }
 
 export default ListPlayers;
