@@ -13,11 +13,11 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => (
       if (i > 3) return null;
 
       return (
-        <PlayerItem>
+        <PlayerItem key={player.id}>
           <CharacterImage src={getCharacterImage(player.character)} />
           <PlayerContent>
             <ContentItem>
-              <h2>{player.name}</h2> <h2>{player.score}</h2>
+              <h2>{player.name}</h2> <h2>{player.wins || 0}</h2>
             </ContentItem>
             <ContentItem>
               <span>{player.character}</span> <span>{i + 1}th place</span>

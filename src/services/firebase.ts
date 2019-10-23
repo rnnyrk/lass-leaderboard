@@ -31,8 +31,8 @@ const getGames = new Promise((resolve) => (
       querySnapshot.forEach((doc) => {
         games.push({
           id: doc.id,
-          player1: doc.data().name,
-          player2: doc.data().character,
+          player1: doc.data().player1,
+          player2: doc.data().player2,
           outcome: doc.data().outcome,
         });
 

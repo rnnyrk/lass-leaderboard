@@ -10,10 +10,10 @@ import {
 const ListPlayers: React.FC<ListPlayersProps> = ({ players }) => (
   <ListPlayersContainer>
     {players.map((player, i) => {
-      if (i < 3) return null;
+      if (i <= 3) return null;
 
       return (
-        <ListItem>
+        <ListItem key={player.id}>
           <ListItemImg src={getCharacterImage(player.character)} />
           <ListItemContent>
             <ListPart>
@@ -22,7 +22,7 @@ const ListPlayers: React.FC<ListPlayersProps> = ({ players }) => (
             </ListPart>
             <ListPart>
               <span>Score</span>
-              <h4>{player.score}</h4>
+              <h4>{player.wins}</h4>
             </ListPart>
           </ListItemContent>
         </ListItem>
