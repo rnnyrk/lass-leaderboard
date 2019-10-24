@@ -15,51 +15,42 @@ const Leaderboard: React.FC = () => {
         const players = values[0];
         const games = values[1];
 
-        games.forEach((game: i.Game) => {
-          const matched = players.map((player: i.Player) => {
-            console.log('player.name', player.name, player);
-            console.log('game', game);
+        const matched = players.map((player: i.Player) => {
+          let combinedPlayer = {
+            ...player,
+            games: 0,
+            losses: 0,
+            wins: 0,
+          };
 
+          games.forEach((game) => {
             if (player.name === game.player1 || player.name === game.player2) {
-              console.log('MATCH!');
-
               if (player.name === game.outcome) {
-                console.log('WON!');
-                return {
-                  ...player,
-                  games: player.games ? player.games += 1 : 1,
-                  losses: player.losses || 0,
-                  wins: player.wins ? player.wins += 1 : 1,
+                combinedPlayer = {
+                  ...combinedPlayer,
+                  games: combinedPlayer.games += 1,
+                  losses: combinedPlayer.losses,
+                  wins: combinedPlayer.wins += 1,
                 };
               } else {
-                console.log('LOST!');
-                return {
-                  ...player,
-                  games: player.games ? player.games += 1 : 1,
-                  losses: player.losses ? player.losses += 1 : 1,
-                  wins: player.wins || 0,
+                combinedPlayer = {
+                  ...combinedPlayer,
+                  games: combinedPlayer.games += 1,
+                  losses: combinedPlayer.losses += 1,
+                  wins: combinedPlayer.wins,
                 };
               }
             }
-
-            return {
-              ...player,
-              games: player.games || 0,
-              losses: player.losses || 0,
-              wins: player.wins || 0,
-            };
           });
 
-          console.log('matched', matched);
-
-          matched.sort((a: i.Player, b: i.Player) => {
-            return b.wins - a.wins;
-          });
-
-          console.log('sorted', matched);
-
-          setLeaderboard(matched);
+          return combinedPlayer;
         });
+
+        matched.sort((a: i.Player, b: i.Player) => {
+          return b.wins - a.wins;
+        });
+
+        setLeaderboard(matched);
       });
   }, []);
 
