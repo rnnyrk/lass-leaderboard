@@ -11,6 +11,7 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => (
   <TopPlayersContainer>
     {players.map((player, i) => {
       if (i > 3) return null;
+      const place = i + 1;
 
       return (
         <PlayerItem key={player.id}>
@@ -20,7 +21,7 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => (
               <h2>{player.name}</h2> <h2>{player.wins || 0}</h2>
             </ContentItem>
             <ContentItem>
-              <span>{player.character}</span> <span>{i + 1}th place</span>
+              <span>{player.character}</span> <span>{place}{place === 2 ? 'nd' : 'st'} place</span>
             </ContentItem>
           </PlayerContent>
         </PlayerItem>
