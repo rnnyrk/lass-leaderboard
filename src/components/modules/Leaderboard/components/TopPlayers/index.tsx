@@ -15,13 +15,14 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => (
 
       return (
         <PlayerItem key={player.id}>
-          <CharacterImage src={getCharacterImage(player.character)} />
+          <CharacterImage src={getCharacterImage(player.character)} />``
           <PlayerContent>
             <ContentItem>
               <h2>{player.name}</h2> <h2>{player.wins || 0}</h2>
             </ContentItem>
             <ContentItem>
-              <span>{player.character}</span> <span>{place}{place === 2 ? 'nd' : 'st'} place</span>
+              <span>{player.character}</span>
+              <span>{place}{place === 2 ? 'nd' : 'st'} place</span>
             </ContentItem>
           </PlayerContent>
         </PlayerItem>
