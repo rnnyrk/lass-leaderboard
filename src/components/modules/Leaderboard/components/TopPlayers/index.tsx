@@ -11,13 +11,13 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ players }) => {
   const getOrdernal = (place: number): string => {
     switch (place) {
       case 1:
-        return '1st';
+        return 'st';
       case 2:
-        return '2nd';
+        return 'nd';
       case 3:
-        return '3rd';
+        return 'rd';
       case 4:
-        return '4th';
+        return 'th';
       default: return '';
     }
   };
