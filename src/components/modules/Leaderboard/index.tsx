@@ -15,15 +15,11 @@ const Leaderboard: React.FC = () => {
   const players = useSelector((state) => state.players.data);
 
   useEffect(() => {
-    console.log('render1');
-
     dispatch(getGames());
     dispatch(getPlayers());
   }, [dispatch]);
 
   useEffect(() => {
-    console.log('render2');
-
     if (games && players) {
       const matched = players.map((player: i.PlayerData) => {
         let combinedPlayer = {

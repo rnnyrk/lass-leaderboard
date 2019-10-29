@@ -41,7 +41,7 @@ export default (state = initialState, action: ActionType<typeof playersActions>)
   }
 };
 
-export const getPlayers: i.GetPlayers['thunk'] = () => (dispatch, getState, api) => {
+export const getPlayers: i.GetPlayers = () => (dispatch, getState, api) => {
   dispatch(playersActions.get());
 
   new Promise((resolve) => (
