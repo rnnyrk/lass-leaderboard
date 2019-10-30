@@ -9,7 +9,7 @@ import {
 } from './styled';
 
 const Tooltip: React.FC<TooltipProps> = ({
-  allPlayers, wins, losses, children,
+  allPlayers, wins, losses, children, currentPlayer,
 }) => {
   const upcomingPlayers = allPlayers.map((player) => {
     if (!wins.includes(player.name) && !losses.includes(player.name)) {
@@ -39,7 +39,7 @@ const Tooltip: React.FC<TooltipProps> = ({
           <TooltipPart>
             <TooltipTitle>Upcoming</TooltipTitle>
             {upcomingPlayers.map((playerName) => {
-              if (playerName) {
+              if (playerName && playerName !== currentPlayer) {
                 return (
                   <TooltipItem key={uuid()} upcoming>
                     {playerName}
@@ -67,6 +67,7 @@ type TooltipProps = {
   allPlayers: i.PlayerData[];
   wins: string[];
   losses: string[];
+  currentPlayer: string;
 };
 
 export default Tooltip;

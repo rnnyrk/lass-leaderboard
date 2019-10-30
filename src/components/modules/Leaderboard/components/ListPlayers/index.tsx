@@ -20,6 +20,7 @@ const ListPlayers: React.FC<ListPlayersProps> = ({ leaderboard, allPlayers }) =>
           wins={player.wins}
           losses={player.losses}
           allPlayers={allPlayers}
+          currentPlayer={player.name}
         >
           <ListItem key={player.id}>
             <ListItemImg src={getCharacterImage(player.character)} />
