@@ -13,4 +13,4 @@ export type GamesState = {
   loading: boolean;
 };
 
-export type GetGames = i.BaseThunkAction<() => void>;
+export type GetGames = i.ThunkAction<() => void>;

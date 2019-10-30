@@ -22,30 +22,30 @@ const Leaderboard: React.FC = () => {
   useEffect(() => {
     if (games && players) {
       const matched = players.map((player: i.PlayerData) => {
-        let combinedPlayer = {
+        let combinedPlayer: i.PlayerData = {
           ...player,
-          games: 0,
-          losses: 0,
-          wins: 0,
+          losses: [],
+          wins: [],
         };
 
         games.forEach((game) => {
           if (player.name === game.player1 || player.name === game.player2) {
+            const playedAgainst: string = player.name !== game.player1 ? game.player1 : game.player2;
+
+            const losses: string[] = combinedPlayer.losses;
+            const wins: string[] = combinedPlayer.wins;
+
             if (player.name === game.outcome) {
-              combinedPlayer = {
-                ...combinedPlayer,
-                games: combinedPlayer.games += 1,
-                losses: combinedPlayer.losses,
-                wins: combinedPlayer.wins += 1,
-              };
+              wins.push(playedAgainst);
             } else {
-              combinedPlayer = {
-                ...combinedPlayer,
-                games: combinedPlayer.games += 1,
-                losses: combinedPlayer.losses += 1,
-                wins: combinedPlayer.wins,
-              };
+              losses.push(playedAgainst);
             }
+
+            combinedPlayer = {
+              ...combinedPlayer,
+              losses,
+              wins,
+            };
           }
         });
 
@@ -53,7 +53,7 @@ const Leaderboard: React.FC = () => {
       });
 
       matched.sort((a: i.PlayerData, b: i.PlayerData) => {
-        return b.wins - a.wins;
+        return b.wins.length - a.wins.length;
       });
 
       setLeaderboard(matched);
@@ -64,8 +64,8 @@ const Leaderboard: React.FC = () => {
     <LeaderboardContainer>
       <LeaderHeader />
       <LeaderGrid>
-        <TopPlayers players={leaderboard} />
-        <ListPlayers players={leaderboard} />
+        <TopPlayers leaderboard={leaderboard} allPlayers={players} />
+        <ListPlayers leaderboard={leaderboard} allPlayers={players} />
       </LeaderGrid>
     </LeaderboardContainer>
   );

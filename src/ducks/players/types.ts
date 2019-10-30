@@ -4,9 +4,8 @@ export type PlayerData = {
   character: string;
   id: string;
   name: string;
-  games?: number;
-  losses?: number;
-  wins?: number;
+  losses: string[];
+  wins: string[];
 };
 
 export type PlayersState = {
