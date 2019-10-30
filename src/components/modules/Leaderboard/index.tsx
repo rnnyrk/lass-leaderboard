@@ -62,8 +62,6 @@ const Leaderboard: React.FC = () => {
     }
   }, [games, players]);
 
-  console.log('BGVideo', BGVideo);
-
   return (
     <LeaderboardContainer>
       <LeaderHeader />
@@ -72,7 +70,7 @@ const Leaderboard: React.FC = () => {
         <ListPlayers leaderboard={leaderboard} allPlayers={players} />
       </LeaderGrid>
 
-      <VideoBg loop playsInline muted autoPlay>
+      <VideoBg loop playsInline muted autoPlay poster={BgImg}>
         <source src={BGVideo} type="video/mp4" />
       </VideoBg>
     </LeaderboardContainer>
