@@ -35,6 +35,7 @@ export const PlayerContent = styled.div`
 export const ContentItem = styled.div`
   display: flex;
   justify-content: space-between;
+  text-transform: uppercase;
 
   &:first-child {
     margin-bottom: 10px;

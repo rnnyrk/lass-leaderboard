@@ -1,11 +1,12 @@
 import React from 'react';
 import * as i from 'types';
 import { v4 as uuid } from 'uuid';
-import Tippy from '@tippy.js/react';
 import { followCursor } from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 
-import { TooltipContent, TooltipItem, TooltipTitle, TooltipPart, WinIcon } from './styled';
+import {
+  TooltipContent, TooltipItem, TooltipTitle, TooltipPart, WinIcon, StyledTippy,
+} from './styled';
 
 const Tooltip: React.FC<TooltipProps> = ({
   allPlayers, wins, losses, children,
@@ -19,7 +20,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   });
 
   return (
-    <Tippy
+    <StyledTippy
       content={
         <TooltipContent>
           <TooltipPart>
@@ -58,7 +59,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       placement="bottom-start"
     >
       {children}
-    </Tippy>
+    </StyledTippy>
   );
 };
 

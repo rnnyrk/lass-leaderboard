@@ -36,6 +36,7 @@ export const ListItemContent = styled.div`
   border-radius: 3px;
   border: 2px solid ${({ theme }) => theme.colors.gray};
   background: center / cover url(${Texture}) no-repeat;
+  text-transform: uppercase;
 
   &:before {
     content: '';

@@ -1,6 +1,17 @@
 import styled, { css } from 'styled-components';
+import Tippy from '@tippy.js/react';
 
 import WinSvg from 'vectors/win.svg';
+
+export const StyledTippy = styled(Tippy)`
+  background: ${({ theme }) => theme.colors.black};
+  border: 4.5px solid rgba(255, 255, 255, 0.1);
+
+  Styling the arrow for different placements
+  &[data-placement^='bottom-start'] {
+    background: ${({ theme }) => theme.colors.black};
+  }
+`;
 
 export const TooltipContent = styled.div`
   display: flex;
