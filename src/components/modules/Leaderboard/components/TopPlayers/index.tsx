@@ -39,7 +39,7 @@ const TopPlayers: React.FC<TopPlayersProps> = ({ leaderboard, allPlayers }) => {
             currentPlayer={player.name}
           >
             <PlayerItem key={player.id}>
-              <CharacterImage src={getCharacterImage(player.character)} />``
+              <CharacterImage src={getCharacterImage(player.character)} />
               <PlayerContent>
                 <ContentItem>
                   <h2>{player.name}</h2> <h2>{player.wins.length}</h2>
