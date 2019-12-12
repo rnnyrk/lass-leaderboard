@@ -10,7 +10,7 @@ export const BracketContainer = styled.div`
 export const BracketGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 60px;
+  grid-template-rows: 182px 176px 182px;
   width: 100%;
   height: 100%;
 `;

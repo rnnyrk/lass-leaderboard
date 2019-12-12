@@ -9,7 +9,7 @@ import palutena from 'images/chars/palutena.png';
 import simon from 'images/chars/simon.png';
 import ike from 'images/chars/ike.png';
 
-const getCharacterImage = (character: string): string => {
+const getCharacterImage = (character: CharacterOptions): string => {
   switch (character) {
     case 'Donkey Kong': return donkeykong;
     case 'Samus': return samus;
@@ -24,5 +24,7 @@ const getCharacterImage = (character: string): string => {
     default: return '';
   }
 };
+
+type CharacterOptions = 'Ike' | 'Simon' | 'Palutena' | 'Donkey Kong' | 'Samus' | 'Jigglypuff' | 'Corrin' | 'Ness' | 'Pokemon Trainer' | 'Mewtwo';
 
 export default getCharacterImage;

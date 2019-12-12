@@ -5,6 +5,7 @@ import * as i from 'types';
 import VideoBg from 'common/VideoBg';
 import PageHeader from 'common/PageHeader';
 
+import { HomePlayer } from './components';
 import { BracketContainer, BracketGrid } from './styled';
 
 const Bracket: React.FC = () => {
@@ -12,7 +13,10 @@ const Bracket: React.FC = () => {
   return (
     <BracketContainer>
       <PageHeader title="Semifinals" subtitle="Matches" />
-      <BracketGrid />
+      <BracketGrid>
+        <HomePlayer variant="purple" />
+        <HomePlayer variant="pink" />
+      </BracketGrid>
 
       <VideoBg />
     </BracketContainer>
