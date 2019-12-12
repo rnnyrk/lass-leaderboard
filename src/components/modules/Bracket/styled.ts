@@ -13,7 +13,7 @@ export const BracketGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 182px 176px 182px;
-  grid-gap: 100px;
+  grid-gap: 80px;
   width: 100%;
   height: 100%;
 `;

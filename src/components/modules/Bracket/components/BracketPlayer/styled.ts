@@ -39,7 +39,7 @@ export const BracketPlayerItem = styled.div<BracketPlayerItemProps>`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
   height: 100%;
   color: ${({ theme }) => theme.colors.white};
 
