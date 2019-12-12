@@ -4,11 +4,11 @@ import * as i from 'types';
 
 import { getGames } from 'ducks/games';
 import { getPlayers } from 'ducks/players';
-import BgImg from 'images/bg.png?external';
-import BGVideo from 'images/bg.mp4';
+import VideoBg from 'common/VideoBg';
+import PageHeader from 'common/PageHeader';
 
-import { LeaderHeader, ListPlayers, TopPlayers } from './components';
-import { LeaderboardContainer, LeaderGrid, VideoBg } from './styled';
+import { ListPlayers, TopPlayers } from './components';
+import { LeaderboardContainer, LeaderGrid } from './styled';
 
 const Leaderboard: React.FC = () => {
   const [leaderboard, setLeaderboard] = useState<i.PlayerData[]>([]);
@@ -64,15 +64,13 @@ const Leaderboard: React.FC = () => {
 
   return (
     <LeaderboardContainer>
-      <LeaderHeader />
+      <PageHeader title="Top 4" subtitle="Leaderboard" secondTitle="Ranking" />
       <LeaderGrid>
         <TopPlayers leaderboard={leaderboard} allPlayers={players} />
         <ListPlayers leaderboard={leaderboard} allPlayers={players} />
       </LeaderGrid>
 
-      <VideoBg loop playsInline muted autoPlay poster={BgImg}>
-        <source src={BGVideo} type="video/mp4" />
-      </VideoBg>
+      <VideoBg />
     </LeaderboardContainer>
   );
 };

@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import Tippy from '@tippy.js/react';
 
 import WinSvg from 'vectors/win.svg';
+import SkullSvg from 'vectors/skull.svg';
 
 export const StyledTippy = styled(Tippy)`
   background: ${({ theme }) => theme.colors.black};
@@ -47,5 +48,11 @@ export const TooltipTitle = styled(TooltipItem)`
 export const WinIcon = styled(WinSvg)`
   width: 11px;
   height: 11px;
-  margin: 1px 0 0 3px;
+  margin: 1px 0 0 5px;
+`;
+
+export const SkullIcon = styled(SkullSvg)`
+  width: 13px;
+  height: 11px;
+  margin: 2px 0 0 5px;
 `;

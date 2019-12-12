@@ -31,7 +31,7 @@ const ListPlayers: React.FC<ListPlayersProps> = ({ leaderboard, allPlayers }) =>
               </ListPart>
               <ListPart>
                 <span>Score</span>
-                <h4>{player.wins.length}</h4>
+                <h4>{player.wins.length} / {player.losses.length}</h4>
               </ListPart>
             </ListItemContent>
           </ListItem>

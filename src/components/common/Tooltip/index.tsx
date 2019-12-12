@@ -5,7 +5,8 @@ import { followCursor } from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 
 import {
-  TooltipContent, TooltipItem, TooltipTitle, TooltipPart, WinIcon, StyledTippy,
+  TooltipContent, TooltipItem, TooltipTitle, TooltipPart,
+  WinIcon, SkullIcon, StyledTippy,
 } from './styled';
 
 const Tooltip: React.FC<TooltipProps> = ({
@@ -32,7 +33,7 @@ const Tooltip: React.FC<TooltipProps> = ({
             ))}
             {losses.map((playerName) => (
               <TooltipItem key={uuid()}>
-                {playerName}
+                {playerName} <SkullIcon />
               </TooltipItem>
             ))}
           </TooltipPart>
