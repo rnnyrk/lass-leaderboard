@@ -4,6 +4,7 @@ import GlobalStyle from 'styles';
 
 const Intro = lazy(() => import('modules/Intro'));
 const Leaderboard = lazy(() => import('modules/Leaderboard'));
+const Bracket = lazy(() => import('modules/Bracket'));
 
 const App: React.FC<RouteComponentProps> = () => (
   <main>
@@ -12,6 +13,7 @@ const App: React.FC<RouteComponentProps> = () => (
       <Switch>
         <Route path="/" component={Intro} exact />
         <Route path="/leaderboard" component={Leaderboard} exact />
+        <Route path="/bracket" component={Bracket} exact />
       </Switch>
     </Suspense>
   </main>
