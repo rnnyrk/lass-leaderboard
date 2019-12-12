@@ -40,7 +40,7 @@ export const HomePlayerItem = styled.div<HomePlayerItemProps>`
   display: flex;
   justify-content: flex-end;
   flex-direction: column;
-  width: 375px;
+  width: 80%;
   height: 100%;
   color: ${({ theme }) => theme.colors.white};
 

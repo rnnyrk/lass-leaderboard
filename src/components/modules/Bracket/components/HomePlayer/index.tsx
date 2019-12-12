@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import * as i from 'types';
+import React from 'react';
 
 import getCharacterImage from 'services/getCharacterImage';
 

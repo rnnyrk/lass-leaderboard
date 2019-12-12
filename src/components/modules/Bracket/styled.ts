@@ -1,10 +1,12 @@
 import styled from 'styled-components';
 
 export const BracketContainer = styled.div`
+  max-width: 100vw;
   width: 100vw;
   min-height: 100vh;
   height: 100%;
   padding: 60px;
+  overflow: hidden;
 `;
 
 export const BracketGrid = styled.div`
