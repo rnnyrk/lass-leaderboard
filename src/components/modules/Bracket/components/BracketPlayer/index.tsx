@@ -3,31 +3,31 @@ import React from 'react';
 import getCharacterImage from 'services/getCharacterImage';
 
 import {
-  HomePlayerContainer, HomePlayerContent, HomePlayerItem, CharacterImage, ContentItem,
+  BracketPlayerContainer, BracketPlayerContent, BracketPlayerItem, CharacterImage, ContentItem,
 } from './styled';
 
-const HomePlayer: React.FC<HomePlayerProps> = ({ variant }) => {
+const BracketPlayer: React.FC<BracketPlayerProps> = ({ variant }) => {
   return (
-    <HomePlayerContainer>
-      <HomePlayerItem variant={variant}>
+    <BracketPlayerContainer>
+      <BracketPlayerItem variant={variant}>
         <CharacterImage src={getCharacterImage('Donkey Kong')} />
-        <HomePlayerContent>
+        <BracketPlayerContent>
           <ContentItem>
             <h2>Nosso</h2>
           </ContentItem>
           <ContentItem>
             <span>Donkey Kong</span>
           </ContentItem>
-        </HomePlayerContent>
-      </HomePlayerItem>
-    </HomePlayerContainer>
+        </BracketPlayerContent>
+      </BracketPlayerItem>
+    </BracketPlayerContainer>
   );
 };
 
 export type VariantProps = 'purple' | 'pink';
 
-type HomePlayerProps = {
+type BracketPlayerProps = {
   variant: VariantProps;
 }
 
-export default HomePlayer;
+export default BracketPlayer;
