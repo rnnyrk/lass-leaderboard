@@ -17,5 +17,4 @@ export const FinalsContainer = styled.div`
   justify-content: center;
   width: 800px;
   height: 176px;
-  margin-top: 200px;
 `;

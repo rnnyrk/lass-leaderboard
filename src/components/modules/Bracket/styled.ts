@@ -17,3 +17,9 @@ export const BracketGrid = styled.div`
   width: 100%;
   height: 100%;
 `;
+
+export const FinalsWrapper = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
