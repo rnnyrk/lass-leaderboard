@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import GridPurple from 'images/grid_purple.png?external';
+import GridBlue from 'images/grid_blue.png?external';
 import GridPink from 'images/grid_pink.png?external';
 
 import { VariantProps } from '.';
@@ -44,11 +44,11 @@ export const BracketPlayerItem = styled.div<BracketPlayerItemProps>`
   height: 100%;
   color: ${({ theme }) => theme.colors.white};
 
-  ${(props) => props.variant === 'purple' && css`
+  ${(props) => props.variant === 'blue' && css`
     ${BracketPlayerContent} {
-      border-color: ${({ theme }) => theme.colors.purple};
-      background: center / cover url(${GridPurple}) no-repeat;
-      box-shadow: 0px 2px 14px 0px rgb(72, 44, 131);
+      border-color: ${({ theme }) => theme.colors.blue};
+      background: center / cover url(${GridBlue}) no-repeat;
+      box-shadow: 0px 2px 14px 0px rgb(0, 184, 255);
     }
   `}
 

@@ -13,13 +13,13 @@ const Bracket: React.FC = () => {
       <FinalsWrapper>
         <Finals />
         <BracketGrid>
-          <BracketPlayer variant="purple" />
+          <BracketPlayer variant="blue" />
           <BracketPlayer variant="pink" />
 
           <Versus />
           <Versus />
 
-          <BracketPlayer variant="purple" />
+          <BracketPlayer variant="blue" />
           <BracketPlayer variant="pink" />
         </BracketGrid>
       </FinalsWrapper>

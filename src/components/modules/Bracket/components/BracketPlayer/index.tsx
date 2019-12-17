@@ -24,7 +24,7 @@ const BracketPlayer: React.FC<BracketPlayerProps> = ({ variant }) => {
   );
 };
 
-export type VariantProps = 'purple' | 'pink';
+export type VariantProps = 'blue' | 'pink';
 
 type BracketPlayerProps = {
   variant: VariantProps;
