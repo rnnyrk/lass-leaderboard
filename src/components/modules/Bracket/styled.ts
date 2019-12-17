@@ -38,12 +38,18 @@ export const BracketGrid = styled.div`
       }
     }
 
-    &:nth-child(5) {
+    &:nth-child(5),
+    &:nth-child(6) {
       &:before {
-        left: 80px;
         bottom: auto;
         top: -90px;
         height: 125px;
+      }
+    }
+
+    &:nth-child(5) {
+      &:before {
+        left: 80px;
       }
     }
 
