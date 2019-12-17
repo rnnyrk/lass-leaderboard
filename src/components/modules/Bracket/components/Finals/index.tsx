@@ -1,13 +1,22 @@
 import React from 'react';
 
-import { FinalsContainer, FinalsPlayer } from './styled';
+import WinIcon from 'vectors/win.svg';
+
+import BracketPlayer from '../BracketPlayer';
+import { FinalsContainer, FinalBracket } from './styled';
 
 const Finals: React.FC<FinalsProps> = () => {
   return (
     <FinalsContainer>
-      <FinalsPlayer />
-      <FinalsPlayer />
-      <FinalsPlayer />
+      <FinalBracket>
+        <BracketPlayer variant="inactive" />
+      </FinalBracket>
+      <FinalBracket>
+        <WinIcon />
+      </FinalBracket>
+      <FinalBracket>
+        <BracketPlayer variant="inactive" />
+      </FinalBracket>
     </FinalsContainer>
   );
 };

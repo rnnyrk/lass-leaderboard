@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-export const FinalsPlayer = styled.div`
+export const FinalBracket = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors.gray};
+  display: flex;
+  align-items: center;
 `;
 
 export const FinalsContainer = styled.div`
@@ -12,9 +13,9 @@ export const FinalsContainer = styled.div`
   top: 50%;
   transform: translate(-50%, -50%);
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
+  grid-template-columns: 400px 150px 400px;
   grid-gap: 10px;
   justify-content: center;
-  width: 800px;
+  width: 950px;
   height: 176px;
 `;

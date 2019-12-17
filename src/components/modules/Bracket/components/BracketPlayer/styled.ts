@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 import GridBlue from 'images/grid_blue.png?external';
 import GridPink from 'images/grid_pink.png?external';
+import GridOrange from 'images/grid_orange.png?external';
+import GridInactive from 'images/grid_inactive.png?external';
 
 import { VariantProps } from '.';
 
@@ -20,7 +22,7 @@ export const BracketPlayerContent = styled.div`
   height: 80%;
   width: 100%;
   padding: 30px;
-  border-radius: 3px;
+  border-radius: 6px;
   border: 5px solid ${({ theme }) => theme.colors.blue};
 `;
 
@@ -57,6 +59,23 @@ export const BracketPlayerItem = styled.div<BracketPlayerItemProps>`
       border-color: ${({ theme }) => theme.colors.pink};
       background: center / cover url(${GridPink}) no-repeat;
       box-shadow: 0px 2px 14px 0px rgb(254, 0, 176);
+    }
+  `}
+
+  ${(props) => props.variant === 'orange' && css`
+    ${BracketPlayerContent} {
+      border-color: ${({ theme }) => theme.colors.orange};
+      background: center / cover url(${GridOrange}) no-repeat;
+      box-shadow: 0px 2px 14px 0px rgb(255, 125, 41);
+    }
+  `}
+
+  ${(props) => props.variant === 'inactive' && css`
+    justify-content: center;
+
+    ${BracketPlayerContent} {
+      border-color: ${({ theme }) => theme.colors.white};
+      background: center / cover url(${GridInactive}) no-repeat;
     }
   `}
 `;

@@ -10,21 +10,27 @@ const BracketPlayer: React.FC<BracketPlayerProps> = ({ variant }) => {
   return (
     <BracketPlayerContainer>
       <BracketPlayerItem variant={variant}>
-        <CharacterImage src={getCharacterImage('Donkey Kong')} />
+        {variant !== 'inactive' && (
+          <CharacterImage src={getCharacterImage('Donkey Kong')} />
+        )}
         <BracketPlayerContent>
-          <ContentItem>
-            <h2>Nosso</h2>
-          </ContentItem>
-          <ContentItem>
-            <span>Donkey Kong</span>
-          </ContentItem>
+          {variant !== 'inactive' && (
+            <>
+              <ContentItem>
+                <h2>Nosso</h2>
+              </ContentItem>
+              <ContentItem>
+                <span>Donkey Kong</span>
+              </ContentItem>
+            </>
+          )}
         </BracketPlayerContent>
       </BracketPlayerItem>
     </BracketPlayerContainer>
   );
 };
 
-export type VariantProps = 'blue' | 'pink';
+export type VariantProps = 'blue' | 'pink' | 'orange' | 'inactive';
 
 type BracketPlayerProps = {
   variant: VariantProps;
