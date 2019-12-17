@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Switch, Route, withRouter, RouteComponentProps } from 'react-router-dom';
 import GlobalStyle from 'styles';
 
+import VideoBg from 'common/VideoBg';
 import Menu from 'common/Menu';
 
 const Intro = lazy(() => import('modules/Intro'));
@@ -19,6 +20,8 @@ const App: React.FC<RouteComponentProps> = () => (
         <Route path="/bracket" component={Bracket} exact />
       </Switch>
     </Suspense>
+
+    <VideoBg />
   </main>
 );
 

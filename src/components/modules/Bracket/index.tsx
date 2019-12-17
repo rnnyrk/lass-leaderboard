@@ -1,6 +1,5 @@
 import React from 'react';
 
-import VideoBg from 'common/VideoBg';
 import PageHeader from 'common/PageHeader';
 
 import { BracketPlayer, Versus, Finals } from './components';
@@ -24,8 +23,6 @@ const Bracket: React.FC = () => {
           <BracketPlayer variant="pink" />
         </BracketGrid>
       </FinalsWrapper>
-
-      <VideoBg />
     </BracketContainer>
   );
 };

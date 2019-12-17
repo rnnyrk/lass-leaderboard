@@ -4,7 +4,6 @@ import * as i from 'types';
 
 import { getGames } from 'ducks/games';
 import { getPlayers } from 'ducks/players';
-import VideoBg from 'common/VideoBg';
 import PageHeader from 'common/PageHeader';
 
 import { ListPlayers, TopPlayers } from './components';
@@ -69,8 +68,6 @@ const Leaderboard: React.FC = () => {
         <TopPlayers leaderboard={leaderboard} allPlayers={players} />
         <ListPlayers leaderboard={leaderboard} allPlayers={players} />
       </LeaderGrid>
-
-      <VideoBg />
     </LeaderboardContainer>
   );
 };
