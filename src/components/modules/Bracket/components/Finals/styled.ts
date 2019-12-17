@@ -5,6 +5,15 @@ export const FinalBracket = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
+
+  &:nth-child(2) {
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 14px rgba(255, 255, 255, .7);
+    color: ${({ theme }) => theme.colors.white};
+  }
 `;
 
 export const FinalsContainer = styled.div`
