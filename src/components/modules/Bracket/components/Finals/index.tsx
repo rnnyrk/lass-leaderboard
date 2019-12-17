@@ -13,7 +13,7 @@ const Finals: React.FC<FinalsProps> = () => {
       </FinalBracket>
       <FinalBracket>
         <WinIcon />
-        Champion
+        <span>Champion</span>
       </FinalBracket>
       <FinalBracket>
         <BracketPlayer variant="inactive" />

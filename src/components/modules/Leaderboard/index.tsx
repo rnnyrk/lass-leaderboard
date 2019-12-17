@@ -12,8 +12,8 @@ import { LeaderboardContainer, LeaderGrid } from './styled';
 const Leaderboard: React.FC = () => {
   const [leaderboard, setLeaderboard] = useState<i.PlayerData[]>([]);
   const dispatch = useDispatch();
-  const games = useSelector((state) => state.games.data);
-  const players = useSelector((state) => state.players.data);
+  const games = useSelector((state: i.ReduxState) => state.games.data);
+  const players = useSelector((state: i.ReduxState) => state.players.data);
 
   useEffect(() => {
     dispatch(getGames());
@@ -27,6 +27,7 @@ const Leaderboard: React.FC = () => {
           ...player,
           losses: [],
           wins: [],
+          score: 0,
         };
 
         games.forEach((game) => {
@@ -35,9 +36,11 @@ const Leaderboard: React.FC = () => {
 
             const losses: string[] = combinedPlayer.losses;
             const wins: string[] = combinedPlayer.wins;
+            let score = combinedPlayer.score;
 
             if (player.name === game.outcome) {
               wins.push(playedAgainst);
+              score++;
             } else {
               losses.push(playedAgainst);
             }
@@ -46,6 +49,7 @@ const Leaderboard: React.FC = () => {
               ...combinedPlayer,
               losses,
               wins,
+              score,
             };
           }
         });
@@ -54,7 +58,15 @@ const Leaderboard: React.FC = () => {
       });
 
       matched.sort((a: i.PlayerData, b: i.PlayerData) => {
-        return b.wins.length - a.wins.length;
+        if (b.score === a.score) {
+          if (b.wins.includes(a.name)) {
+            b.score++;
+          } else {
+            a.score++;
+          }
+        }
+
+        return b.score - a.score;
       });
 
       setLeaderboard(matched);

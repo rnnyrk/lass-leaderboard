@@ -5,7 +5,7 @@ import { PlayersState } from './types';
 
 export const playersActions = {
   get: () => action('players/GET'),
-  getSuccess: (data: i.PlayerData[]) => action('players/GET_SUCCESS', data),
+  getSuccess: (data: i.BasicPlayer[]) => action('players/GET_SUCCESS', data),
   getFailed: (error: string) => action('players/GET_FAILED', error),
 };
 
@@ -48,7 +48,7 @@ export const getPlayers: i.GetPlayers = () => (dispatch, getState, api) => {
     api.collection('players')
       .get()
       .then((querySnapshot) => {
-        const players: i.PlayerData[] = [];
+        const players: i.BasicPlayer[] = [];
 
         querySnapshot.forEach((doc) => {
           players.push({

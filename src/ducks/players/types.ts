@@ -1,11 +1,15 @@
 import * as i from 'types';
 
-export type PlayerData = {
+export type BasicPlayer = {
   character: string;
   id: string;
   name: string;
+}
+
+export type PlayerData = BasicPlayer & {
   losses: string[];
   wins: string[];
+  score: number;
 };
 
 export type PlayersState = {
