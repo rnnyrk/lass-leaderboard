@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import GridBlue from 'images/grid_blue.png?external';
 import GridPink from 'images/grid_pink.png?external';
 import GridOrange from 'images/grid_orange.png?external';
-import GridInactive from 'images/grid_inactive.png?external';
+import Texture from 'images/texture.png?external';
 
 import { VariantProps } from '.';
 
@@ -75,7 +75,7 @@ export const BracketPlayerItem = styled.div<BracketPlayerItemProps>`
 
     ${BracketPlayerContent} {
       border-color: ${({ theme }) => theme.colors.white};
-      background: center / cover url(${GridInactive}) no-repeat;
+      background: center / cover url(${Texture}) no-repeat;
     }
   `}
 `;
