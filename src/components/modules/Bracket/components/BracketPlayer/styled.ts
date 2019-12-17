@@ -85,6 +85,7 @@ type BracketPlayerItemProps = {
 };
 
 export const BracketPlayerContainer = styled.div`
+  position: relative;
   display: flex;
   justify-content: flex-start;
   width: 100%;
