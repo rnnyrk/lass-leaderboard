@@ -16,8 +16,8 @@ const Bracket: React.FC = () => {
           <BracketPlayer variant="purple" />
           <BracketPlayer variant="pink" />
 
-          <Versus  />
-          <Versus  />
+          <Versus />
+          <Versus />
 
           <BracketPlayer variant="purple" />
           <BracketPlayer variant="pink" />

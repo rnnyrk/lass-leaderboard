@@ -1,9 +1,12 @@
 import styled from 'styled-components';
 
+import VsBlue from 'images/vs-blue.png';
+import VsPink from 'images/vs-pink.png';
+
 export const VersusImage = styled.div`
-  width: 150px;
+  width: 160px;
   height: 123px;
-  background-color: ${({ theme }) => theme.colors.gray};
+  background-image: url(${VsBlue});
 `;
 
 export const VersusContainer = styled.div`
@@ -15,5 +18,9 @@ export const VersusContainer = styled.div`
 
   &:nth-child(even) {
     justify-content: flex-end;
+
+    ${VersusImage} {
+      background-image: url(${VsPink});
+    }
   }
 `;
